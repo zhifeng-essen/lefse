@@ -1,3 +1,5 @@
-FROM biobakery/lefse:1.0.0_dev_9adc3a62460e
+FROM continuumio/anaconda:5.2.0
 
-RUN /opt/conda/bin/conda clean --all --yes
+RUN conda install -c bioconda lefse
+
+ENV PATH="/opt/conda/bin:${PATH}"
